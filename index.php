@@ -52,6 +52,9 @@
     ];
 
     $isPressed = isset($_GET['parking']) ? true : false;
+    $ratingPressed = isset($_GET['rating']) ? true : false;
+
+
 
     echo "<pre>";
     var_dump($_GET);
@@ -88,56 +91,44 @@
 
         </form>
 
+        <form action="" method="get">
+            <select class="form-select" name="rating" aria-label="Default select example">
+                <option selected>Filter by rating</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
+
 
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">1</th>
-                    <th scope="col">2</th>
-                    <th scope="col">3</th>
-                    <th scope="col">4</th>
-                    <th scope="col">5</th>
+
+                    <th scope="col">Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">parking</th>
+                    <th scope="col">Vote</th>
+                    <th scope="col">Distance to center</th>
 
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">Name</th>
-
-                    <?php foreach ($hotelFiltered as $hotel) : ?>
-                        <td><?php echo $hotel['name'] ?> </td>
-                    <?php endforeach; ?>
-
-                </tr>
-                <tr>
-                    <th scope="row">Description</th>
-                    <?php foreach ($hotelFiltered as $hotel) : ?>
-                        <td><?php echo $hotel['description'] ?> </td>
-                    <?php endforeach; ?>
-                </tr>
-                <tr>
-                    <th scope="row">Parking</th>
-                    <?php foreach ($hotelFiltered as $hotel) : ?>
+                <?php foreach ($hotelFiltered as $hotel) : ?>
+                    <tr>
+                        <th scope="row"> <?php echo $hotel['name'] ?></th>
+                        <td><?php echo $hotel['description'] ?></td>
                         <td><?php if ($hotel['parking'] == true) {
                                 echo 'Yes';
                             } else {
                                 echo 'No';
                             } ?> </td>
-                    <?php endforeach; ?>
-                </tr>
-                <tr>
-                    <th scope="row">Vote</th>
-                    <?php foreach ($hotelFiltered as $hotel) : ?>
                         <td><?php echo $hotel['vote'] ?> </td>
-                    <?php endforeach; ?>
-                </tr>
-                <tr>
-                    <th scope="row">Distance to center</th>
-                    <?php foreach ($hotelFiltered as $hotel) : ?>
                         <td><?php echo $hotel['distance_to_center'] . " Km" ?> </td>
                     <?php endforeach; ?>
-                </tr>
+
+
             </tbody>
         </table>
 
