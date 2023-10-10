@@ -51,68 +51,69 @@
 
     ];
 
-    foreach ($hotels as $hotel) {
+    /* foreach ($hotels as $hotel) {
         echo "$hotel[name] $hotel[description] $hotel[parking] $hotel[vote] $hotel[distance_to_center]";
     }
+    */
 
-    foreach ($hotels as $key) {
-        echo "<h3> $key[0] </h3>";
-    }
+
     ?>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">1</th>
-                <th scope="col">2</th>
-                <th scope="col">3</th>
-                <th scope="col">4</th>
-                <th scope="col">5</th>
+    <h2 class="text-center p-4">Hotel list</h2>
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">1</th>
+                    <th scope="col">2</th>
+                    <th scope="col">3</th>
+                    <th scope="col">4</th>
+                    <th scope="col">5</th>
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Name</th>
 
-                <?php foreach ($hotels as $hotel) : ?>
-                    <td><?php echo $hotel['name'] ?> </td>
-                <?php endforeach; ?>
+                    <?php foreach ($hotels as $hotel) : ?>
+                        <td><?php echo $hotel['name'] ?> </td>
+                    <?php endforeach; ?>
 
-            </tr>
-            <tr>
-                <th scope="row">Description</th>
-                <?php foreach ($hotels as $hotel) : ?>
-                    <td><?php echo $hotel['description'] ?> </td>
-                <?php endforeach; ?>
-            </tr>
-            <tr>
-                <th scope="row">Parking</th>
-                <?php foreach ($hotels as $hotel) : ?>
-                    <td><?php if ($hotel['parking'] == true) {
-                            echo 'Yes';
-                        } else {
-                            echo 'No';
-                        } ?> </td>
-                <?php endforeach; ?>
-            </tr>
-            <tr>
-                <th scope="row">Vote</th>
-                <?php foreach ($hotels as $hotel) : ?>
-                    <td><?php echo $hotel['vote'] ?> </td>
-                <?php endforeach; ?>
-            </tr>
-            <tr>
-                <th scope="row">Distance to center</th>
-                <?php foreach ($hotels as $hotel) : ?>
-                    <td><?php echo $hotel['distance_to_center'] ?> </td>
-                <?php endforeach; ?>
-            </tr>
-        </tbody>
-    </table>
+                </tr>
+                <tr>
+                    <th scope="row">Description</th>
+                    <?php foreach ($hotels as $hotel) : ?>
+                        <td><?php echo $hotel['description'] ?> </td>
+                    <?php endforeach; ?>
+                </tr>
+                <tr>
+                    <th scope="row">Parking</th>
+                    <?php foreach ($hotels as $hotel) : ?>
+                        <td><?php if ($hotel['parking'] == true) {
+                                echo 'Yes';
+                            } else {
+                                echo 'No';
+                            } ?> </td>
+                    <?php endforeach; ?>
+                </tr>
+                <tr>
+                    <th scope="row">Vote</th>
+                    <?php foreach ($hotels as $hotel) : ?>
+                        <td><?php echo $hotel['vote'] ?> </td>
+                    <?php endforeach; ?>
+                </tr>
+                <tr>
+                    <th scope="row">Distance to center</th>
+                    <?php foreach ($hotels as $hotel) : ?>
+                        <td><?php echo $hotel['distance_to_center'] . " Km" ?> </td>
+                    <?php endforeach; ?>
+                </tr>
+            </tbody>
+        </table>
 
-
+    </div>
 
 </body>
 
