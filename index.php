@@ -51,16 +51,25 @@
 
     ];
 
-    /* foreach ($hotels as $hotel) {
-        echo "$hotel[name] $hotel[description] $hotel[parking] $hotel[vote] $hotel[distance_to_center]";
-    }
-    */
+    $isPressed = $_GET['parcheggio'];
 
+    $hotelFiltered = []
 
     ?>
 
     <h2 class="text-center p-4">Hotel list</h2>
     <div class="container">
+
+        <form action="" method="get">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="parcheggio">
+                <label class="form-check-label" for="parcheggio">
+                    Hotel con parcheggio
+                </label>
+            </div>
+
+        </form>
+
         <table class="table table-bordered">
             <thead>
                 <tr>
